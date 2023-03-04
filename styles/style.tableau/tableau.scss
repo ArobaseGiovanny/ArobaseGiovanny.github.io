@@ -1,9 +1,18 @@
 @import "../style.mixins/_mixins.scss";
 
+$backgroundBody: #FFFF;
+$backgroundCard: #f0f0f0;
+$backgroundNumber: #fc60fa;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+body {
+    background: $backgroundBody;
 }
 
 // Navbar
@@ -22,11 +31,10 @@ span {
 }
 // Card
 .card {
-    border: 2px solid black;
     display: inline-block;
     border-radius: 20px;
-    padding: 5px 0px;
     margin-bottom: 15px;
+    background: $backgroundCard;
 
     // Le container de la partie haute de la card
     &__top {
@@ -38,10 +46,11 @@ span {
         @include flexbox($flex-direction: column);
         padding: 10px;
         border-radius: 20px 0px 20px 0px;
+        background: $backgroundNumber;
+        color: white;
 
-        // Le numéri sans le texte "but n°"
+        // Le numéro sans le texte "but n°"
         & span:nth-child(2){
-            color: green;
             font-size: 1.7em;
         }
     }
@@ -64,12 +73,13 @@ span {
     // Container de la partie des détails (toute la partie du bas)
     &__details {
         @include flexbox($flex-direction: column);
+        margin-top: 10px;
         & div {
             width: 90%;
             text-align: center;
             border-radius: 10px;
             margin-bottom: 8px;
-            background: red;
+            background: $backgroundBody;
         }
         // Les stats à enlever pour mobile (question de place)
         & .card__finishing, .card__assist {

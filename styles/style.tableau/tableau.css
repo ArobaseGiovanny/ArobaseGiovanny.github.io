@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+body {
+  background: white;
 }
 
 .menu {
@@ -47,11 +52,10 @@ span {
 }
 
 .card {
-  border: 2px solid black;
   display: inline-block;
   border-radius: 20px;
-  padding: 5px 0px;
   margin-bottom: 15px;
+  background: #f0f0f0;
 }
 .card__top {
   display: flex;
@@ -63,9 +67,10 @@ span {
   flex-direction: column;
   padding: 10px;
   border-radius: 20px 0px 20px 0px;
+  background: #fc60fa;
+  color: white;
 }
 .card__number span:nth-child(2) {
-  color: green;
   font-size: 1.7em;
 }
 .card__info {
@@ -86,13 +91,14 @@ span {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 10px;
 }
 .card__details div {
   width: 90%;
   text-align: center;
   border-radius: 10px;
   margin-bottom: 8px;
-  background: red;
+  background: white;
 }
 .card__details .card__finishing, .card__details .card__assist {
   display: none;
