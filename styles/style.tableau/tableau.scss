@@ -1,0 +1,79 @@
+@import "../style.mixins/_mixins.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Navbar
+.menu {
+    @include navbar;
+}
+// Container des cards
+.container {
+    width: 100%;
+    @include flexbox($justify-content: space-evenly);
+    flex-wrap: wrap;
+}
+
+span {
+    font-size: 0.8em;
+}
+// Card
+.card {
+    border: 2px solid black;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 5px 0px;
+    margin-bottom: 15px;
+
+    // Le container de la partie haute de la card
+    &__top {
+        display: flex;
+    }
+
+    // Le container de la partie du but de la card
+    &__number {
+        @include flexbox($flex-direction: column);
+        padding: 10px;
+        border-radius: 20px 0px 20px 0px;
+
+        // Le numéri sans le texte "but n°"
+        & span:nth-child(2){
+            color: green;
+            font-size: 1.7em;
+        }
+    }
+
+    // Le container de la partie Date/Minute et Club
+    &__info {
+        padding: 5px;
+        @include flexbox($flex-direction: column, $justify-content: space-evenly);
+    }
+
+    // Container de la partie Date/Minute
+    &__dateMinute {
+        padding: 0px 10px;
+        // Le span Minute
+        & span:nth-child(2) {
+            display: none;
+        }
+    }
+
+    // Container de la partie des détails (toute la partie du bas)
+    &__details {
+        @include flexbox($flex-direction: column);
+        & div {
+            width: 90%;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            background: red;
+        }
+        // Les stats à enlever pour mobile (question de place)
+        & .card__finishing, .card__assist {
+        display: none;
+      }
+    } 
+}
