@@ -1,7 +1,7 @@
 @import "../style.mixins/_mixins.scss";
 
 $backgroundBody: #FFFF;
-$backgroundCard: #f7f7f7;
+$backgroundCard: #f0f0f0;
 $backgroundNumber: #fc60fa;
 
 * {
@@ -27,18 +27,16 @@ body {
 }
 
 span {
-    font-size: 0.8em;
+    font-size: 0.7em;
 }
 // Card
 .card {
-    width: 90%;
-    margin: auto;
-    @include flexbox($justify-content: space-between);
-    overflow: hidden;
+    display: inline-block;
     border-radius: 20px;
-    margin-bottom: 15px;
     background: $backgroundCard;
     box-shadow: 0px 5px 15px -6px rgba(0,0,0,0.3);
+    width: 40%;
+
 
     // Le container de la partie haute de la card
     &__top {
@@ -48,24 +46,26 @@ span {
     // Le container de la partie du but de la card
     &__number {
         @include flexbox($flex-direction: column);
-        padding: 10px;
+        border-radius: 20px 0px 20px 0px;
         background: $backgroundNumber;
         color: white;
+        padding: 10px;
+        width: 50px;
 
         // Le numéro sans le texte "but n°"
-        & span:nth-child(2){
+        /*& span:nth-child(2){
             font-size: 1.7em;
-        }
+        }*/
     }
 
     // Le container de la partie Date/Minute et Club
     &__info {
         @include flexbox($flex-direction: column, $justify-content: space-evenly);
+        width: 90px;
     }
 
     // Container de la partie Date/Minute
     &__dateMinute {
-        padding: 0px 10px;
         // Le span Minute
         & span:nth-child(2) {
             display: none;
@@ -74,17 +74,19 @@ span {
 
     // Container de la partie des détails (toute la partie du bas)
     &__details {
-        @include flexbox($flex-direction: column, $align-items: normal, $justify-content: normal);
-        margin-right: 10px;
-        padding-top: 5px;
-        // Les div qui contiennent les textes des détails
+        @include flexbox($flex-direction: column);
+        margin: 8px 0px 5px 0px;    
         & div {
+            width: 90%;
+            margin: auto;
             text-align: center;
-            border-radius: 10px;
-            margin-bottom: 8px;
+            border-radius: 15px;
             background: $backgroundBody;
-            padding: 0px 10px;
-            box-shadow: 0px 3px 10px -5px rgba(0,0,0,0.3);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;       
+            padding: 2px 10px;
+            margin: 3px 0px;    
         }
         // Les stats à enlever pour mobile (question de place)
         & .card__finishing, .card__assist {
