@@ -52,10 +52,16 @@ span {
 }
 
 .card {
-  display: inline-block;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  overflow: hidden;
   border-radius: 20px;
   margin-bottom: 15px;
-  background: #f0f0f0;
+  background: #f7f7f7;
   box-shadow: 0px 5px 15px -6px rgba(0, 0, 0, 0.3);
 }
 .card__top {
@@ -67,7 +73,6 @@ span {
   align-items: center;
   flex-direction: column;
   padding: 10px;
-  border-radius: 20px 0px 20px 0px;
   background: #fc60fa;
   color: white;
 }
@@ -75,7 +80,6 @@ span {
   font-size: 1.7em;
 }
 .card__info {
-  padding: 5px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -89,17 +93,19 @@ span {
 }
 .card__details {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: normal;
+  align-items: normal;
   flex-direction: column;
-  margin-top: 10px;
+  margin-right: 10px;
+  padding-top: 5px;
 }
 .card__details div {
-  width: 90%;
   text-align: center;
   border-radius: 10px;
   margin-bottom: 8px;
   background: white;
+  padding: 0px 10px;
+  box-shadow: 0px 3px 10px -5px rgba(0, 0, 0, 0.3);
 }
 .card__details .card__finishing, .card__details .card__assist {
   display: none;
