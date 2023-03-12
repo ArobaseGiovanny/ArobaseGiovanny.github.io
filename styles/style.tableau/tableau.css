@@ -26,6 +26,9 @@ body {
 .menu__title {
   font-size: 1em;
 }
+.menu__title span {
+  font-family: "Lilita One", cursive;
+}
 .menu__nav {
   width: 30px;
   display: block;
