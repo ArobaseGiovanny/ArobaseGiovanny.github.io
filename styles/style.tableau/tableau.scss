@@ -122,3 +122,23 @@ body {
         }
   }
 }
+
+// Le container de l'icone filtre
+.filter {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    font-size: 2em;
+    background: white;
+    padding: 25px;
+    border-radius: 50%;
+    @include flexbox;
+    position: fixed;
+    
+    // L'icone filtre
+    & i {
+        color: black;
+    }
+}

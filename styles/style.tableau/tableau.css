@@ -17,7 +17,7 @@ body {
   flex-direction: row;
   position: fixed;
   width: 100%;
-  height: 50px;
+  height: 70px;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   padding: 20px;
@@ -140,4 +140,23 @@ body {
   .card .card__opponent, .card .card__competition, .card .card__assist {
     margin-bottom: 10px;
   }
+}
+.filter {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  font-size: 2em;
+  background: white;
+  padding: 25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: fixed;
+}
+.filter i {
+  color: black;
 }/*# sourceMappingURL=tableau.css.map */
