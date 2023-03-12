@@ -22,6 +22,7 @@ body {
 // Container des cards
 .container {
     width: 100%;
+    padding-top: 80px;
     @include flexbox($flex-direction: column);
 }
 
