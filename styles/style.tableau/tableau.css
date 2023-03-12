@@ -63,4 +63,39 @@ body {
 }
 .card .card__opponent, .card .card__assist {
   margin-bottom: 12px;
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 45%;
+    max-width: 300px;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  .card span {
+    font-size: 1.1em;
+  }
+  .card__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .card .card__stats1, .card .card__stats2 {
+    width: 100%;
+  }
+  .card .card__opponent, .card .card__assist {
+    margin: 0;
+  }
+  .card .card__opponent, .card .card__competition, .card .card__assist {
+    margin-bottom: 10px;
+  }
 }/*# sourceMappingURL=tableau.css.map */

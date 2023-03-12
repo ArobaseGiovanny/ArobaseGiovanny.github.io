@@ -43,7 +43,7 @@ body {
         width: 15px;
     }
 
-    // Le bas de la card
+    // Le bloc du bas de la card
     &__bottom {
         @include flexbox($justify-content: space-between);
         width: 100%;
@@ -76,4 +76,43 @@ body {
 }
 
 
-// Card
+// Responsive pour écran de plus de 600px
+@media screen and (min-width: 600px) {
+    .container {
+        width: 100%;
+        @include flexbox;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 45%;
+        max-width: 300px;
+        margin-right: 15px;
+        margin-left: 15px;
+
+        & span {
+            font-size: 1.1em;
+        }
+
+        // Bloc du bas de la card
+        &__bottom {
+            @include flexbox($flex-direction: column);
+        }
+
+        // Les deux blocs container des stats
+        & .card__stats1, .card__stats2 {
+            width: 100%;
+        }
+
+        // Les div des stats adversaire et passeur (la marge servait à séparer les deux
+        // premières div des autres pour aérer)
+        & .card__opponent, .card__assist {
+            margin: 0;
+        }
+
+        // Les div des stats (sauf la dernières .card__finishing)
+        & .card__opponent, .card__competition, .card__assist {
+            margin-bottom: 10px;
+        }
+  }
+}
