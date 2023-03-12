@@ -9,6 +9,41 @@
 
 
 // Navbar
+@mixin navbar {
+    // Le container de toute la nav
+    @include flexbox($justify-content: space-between);
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    box-shadow: 0px 0px 6px 5px rgba(0,0,0,0.20);
 
+    // La div du titre
+    &__title {
+        font-size: 1.3em;
+    }
+    // Le container de l'icone burger
+    &__nav {
+        width: 30px;
+        display: block;
+        height: 100%;
+        @include flexbox($flex-direction: column, $justify-content: space-evenly, $align-items: flex-start);
+        cursor: pointer;
+
+        // Les deux traits span
+        & span {
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: white;
+        }
+        
+        // Style du deuxième span un peu plus petit
+        & span:nth-child(2) {
+            width: 70%;
+        }
+    }
+}
 
 

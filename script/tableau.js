@@ -13418,6 +13418,16 @@ const tableau = [
 // Fonction pour initialiser toutes les cards
 function allCards() {
     let allCards = "";
+
+    // Les logos correspond au nom de l'équipe
+    const logos = {
+        "Real Madrid": "../images/realmadrid.png",
+        "Juventus": "../images/juventus.png",
+        "Manchester United": "../images/manchesterunited.png",
+        "Al-Nassr": "../images/al-nassr.png",
+        "Sporting CP": "../images/sporting.png"
+      };
+      
     for(let i = 0; i < tableau.length; i++){
         allCards +=
         `
@@ -13427,7 +13437,7 @@ function allCards() {
                 <span>But n°${tableau[i]["But n°"]}</span>
             </div>
             <div class="card__club">
-                <img src="/images/realmadrid.png" alt="Logo du Real Madrid">
+                <img src="${logos[tableau[i].Club]}" alt="Logo ${tableau[i].Club} ">
             </div>
             <div class="card__date">
                 <span>${tableau[i].Date}</span>
@@ -13456,4 +13466,17 @@ function allCards() {
     }
     document.querySelector('.container').innerHTML = allCards;
 }
+// On lance la fonction pour afficher toutes les cards
 allCards();
+
+  // Function pour afficher le contenu si il dépasse de la card
+  function infoIfOverflow(){
+    // Je récupère tous mes éléments dynamiques
+    const elements = document.querySelectorAll(".card__gardien, .card__passeur, .card__finition, .card__adversaire");
+    elements.forEach(function(element) { // pour chaque élément
+      if (element.scrollWidth > element.clientWidth) { // si il dépasse de son contenu
+        element.setAttribute('title', element.textContent) // je lui ajoute un attribut title avec son contenu entier
+      }
+    });
+}
+infoIfOverflow();

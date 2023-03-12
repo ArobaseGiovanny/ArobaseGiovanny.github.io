@@ -8,10 +8,15 @@ $backgroundCard: #1a2a45;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    color: white;
 }
 
 body {
     background: $backgroundBody;
+}
+// Le container du menu de navigation
+.menu {
+    @include navbar;
 }
 
 // Container des cards
