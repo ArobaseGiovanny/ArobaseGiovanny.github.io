@@ -142,12 +142,11 @@ body {
   }
 }
 .filter {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   position: absolute;
   bottom: 25px;
   right: 25px;
-  font-size: 2em;
   background: white;
   padding: 25px;
   border-radius: 50%;
@@ -159,4 +158,5 @@ body {
 }
 .filter i {
   color: black;
+  font-size: 1.7em;
 }/*# sourceMappingURL=tableau.css.map */
